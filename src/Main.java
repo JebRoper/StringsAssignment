@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import java.sql.SQLOutput;
 
 public class Main {
@@ -37,7 +39,7 @@ public class Main {
         if (firstOne.equalsIgnoreCase(null)) {
             System.out.print("Fail - The string is not equal to itself");
         } else {
-            System.out.println("\nGood - There is an error");
+            System.out.println("\nSuccess - There is an error");
         }
 
         if (firstOne.lastIndexOf("stay") == 17) {
@@ -48,7 +50,7 @@ public class Main {
         if (firstOne.lastIndexOf("stay") == 10) {
             System.out.println("Fail - stay starts at 17");
         } else {
-            System.out.println("Good - stay does not start at 10");
+            System.out.println("Success - stay does not start at 10");
         }
 
         if (firstOne.replace("gold", "red").equals("Nothing red can stay")) {
@@ -57,9 +59,9 @@ public class Main {
             System.out.println("Fail - the gold was not replaced");
         }
         if (firstOne.replace("gold", "red").equals("Nothing gold can stay")) {
-            System.out.println("Fail it did not replace the gold");
+            System.out.println("Fail - it did not replace the gold");
         } else {
-            System.out.println("Good - the fail test worked");
+            System.out.println("Success - the fail test worked");
         }
 
         if (firstOne.toLowerCase().equals("nothing gold can stay")) {
@@ -70,10 +72,43 @@ public class Main {
         if (firstOne.toLowerCase().equals("Nothing gold can stay")) {
             System.out.println("Fail - it did not convert");
         } else {
-            System.out.println("Good - the fail test worked");
+            System.out.println("Success - the fail test worked");
         }
+        if (StringUtils.isBlank("")) {
+            System.out.println("Success - Yes it is");
+        } else {
+            System.out.println("Fail - No it's not");
+        }
+
+        if (StringUtils.isBlank("am i blank?")) {
+            System.out.println("Fail - Yes it is");
+        } else {
+            System.out.println("Success - No it's not");
+        }
+        if (StringUtils.equalsIgnoreCase("hello its me", "hello its me")) {
+            System.out.println("Success - these are the same");
+        } else {
+            System.out.println("Fail - these should be the same");
+        }
+        if (StringUtils.equalsIgnoreCase("hello its me", "null")) {
+            System.out.println("Fail - these are not the same");
+        } else {
+            System.out.println("Success - the fail test worked");
+        }
+
+        if (StringUtils.leftPad("Hello", 7, "n").equals("nnHello")) {
+            System.out.println("Success - padding worked");
+        } else {
+            System.out.println("Error - did not run padding");
+        }
+
     }
 }
+
+
+
+
+
 
 
 
